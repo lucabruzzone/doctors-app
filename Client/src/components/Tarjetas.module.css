@@ -1,0 +1,16 @@
+.bigContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,
+            minmax(420px,
+                1fr));
+    gap: 12px;
+}
+/* .bigContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+} */

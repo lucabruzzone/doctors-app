@@ -1,0 +1,223 @@
+/* :root{
+    --color-buttons:  #3d83df;
+    --color-buttonsHover:  #1c70dd;
+    --background-color1: rgb(55, 197, 178);
+    --borderR-buttons: 3px;
+} */
+
+.bigContainerMagnum{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 500;
+}
+.bigContainerMagnum h1{
+    cursor: pointer;
+}
+
+#bigContainer{
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.bigContainerColor1{
+    background-color: white;
+}
+.bigContainerColor2{
+    background-color: rgb(55, 197, 178);
+}
+
+
+
+
+
+
+/*  NOMBRE */
+
+.miConsulta{
+    flex-grow: 0;
+}
+
+.nombre{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-grow: 0; */
+}
+.nombre h1{
+    margin: 0;
+    padding: 5px 10px 5px 0;
+    font-size: 27px;
+    color: #07807a;
+}
+.nombre2 h1{
+    margin: 0;
+    padding: 5px 10px 5px 0;
+    font-size: 27px;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+/* SEARCH BAR */
+
+#oculto{
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 5px;
+    overflow: hidden;
+    scale: 0;
+}
+
+#searchBar{
+    flex-grow: 1;
+    /* background-color: rgb(0, 0, 0); */
+    height: 100%;
+    /* max-width: 550px; */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.inputsContainer{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.inputsSearch{
+    /* flex-grow: 0; */
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsContainer input{
+    height: 47px;
+    /* width: 50%; */
+    /* margin-right: 1%; */
+    border: none;
+    border-radius: var(--borderR-buttons);
+    padding-left: 14px;
+    font-size: 15px;
+    outline: none;
+    /* box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.124); */
+}
+.inputsContainer input::placeholder{
+    opacity: .6;
+}
+
+#input1{
+    /* flex-grow: 1; */
+    width: 50%;
+}
+#input2{
+    width: 50%;
+}
+
+.inputsSearch button{
+    width: 100%;
+    height: 47px;
+    border: none;
+    border-radius: var(--borderR-buttons);
+    background: #3d83df;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    /* box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.124); */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.inputsSearch button:hover{
+    background: #1c70dd;
+}
+
+
+
+
+
+
+/* NAVBAR LINKS */
+
+.listaButtons{
+    flex-grow: 0;
+    height: 100%;
+    padding: 5px 0;
+    /* flex-grow: 1; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.listaButtons li{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding-left: 30%; */
+}
+
+.listaButtons li h2{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+.listaButtons li h2:hover{
+    cursor: pointer;
+    color: #013936;
+}
+
+.listaButtonslih2{
+    color: #024d49;
+}
+
+.listaButtonslih2Cambio{
+    color: #024d49;
+}
+
+.inicioSesion{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 6px;
+    color: #035f5b;
+    border: 2px solid #08968f;
+    border-radius: 3px;
+}
+.inicioSesion2{
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 6px;
+    color: #000000b1;
+    border: 2px solid #ffffff;
+    border-radius: var(--borderR-buttons);
+}
+.listaButtons li h3:hover{
+    background-color:  #08968f;
+    border: 2px solid #08968f;
+    color: white;
+    cursor: pointer;
+}
+
+/* NAVBAR LINKS */

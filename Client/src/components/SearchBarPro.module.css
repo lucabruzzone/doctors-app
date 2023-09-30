@@ -1,0 +1,100 @@
+/* :root{
+    --color-buttons:  #3d83df;
+    --color-buttonsHover:  #1c70dd;
+    --background-color1: rgb(55, 197, 178);
+    --borderR-buttons: 3px;
+} */
+
+.bigContainer{
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 3px;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* backdrop-filter: blur(2px); */
+    background-color:  #138c974e; 
+}
+
+.buttonsBox{
+    padding: 10px 10px 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+
+
+/* FILTER BUTTONS */
+
+.buttonsBox button{
+    padding: 15px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--borderR-buttons);
+}
+.buttonsBoxButtonPressed{
+    color: white;
+    background: #3d83df;
+}
+.buttonsBoxButtonPressed:hover{
+    cursor: pointer;
+}
+.buttonsBoxButtonNotPressed{
+    color: rgba(0, 0, 0, 0.676);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.124);
+}
+.buttonsBoxButtonNotPressed:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.831);
+}
+
+
+
+
+
+
+.downContainer{
+    display: flex;
+    width: 100%;
+}
+
+.inputsContainer{
+    width: 85%;
+}
+
+.inputsSearch{
+    width: 15%;
+}
+.inputsSearch button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--borderR-buttons);
+    background: #3d83df;
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.124);
+}
+.inputsSearch button:hover{
+    cursor: pointer;
+    background: #1c70dd;
+}
+
+
+.bigContainer input{
+    cursor: auto;
+    height: 60px;
+    width: 49%;
+    margin-right: 1%;
+    border: none;
+    border-radius: var(--borderR-buttons);
+    padding-left: 14px;
+    font-size: 17px;
+    outline: none;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.124);
+}

@@ -1,0 +1,31 @@
+
+.bigContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+#bigContainerFixed{
+    padding-top: 60px;
+}
+
+.containerSinNavBar{
+    min-height: 100vh;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+}
+#opacity{
+    opacity: .5;
+    transition: .2s;
+}
+
+.tarjetasContainer{
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+}

@@ -1,0 +1,241 @@
+/* :root{
+    --color-buttons:  #3d83df;
+    --color-buttonsHover:  #1c70dd;
+    --background-color1: rgb(55, 197, 178);
+    --borderR-buttons: 3px;
+} */
+
+.bigContainer{
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.179); */
+    border-radius: 3px;
+}
+
+/* #fijo{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+} */
+
+.bigContainerFixed{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.179); 
+}
+
+
+
+
+
+
+/* FILTROS */
+
+.container{
+    padding: 0;
+    /* margin: 0 0 0 20px;  */
+    height: 47px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* border: 1px solid #07817b; */
+    cursor: pointer;
+    /* background-color: #07817b; */
+}
+
+.presencialContainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.presencialContainer div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 11px; */
+    gap: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.onlineContainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.onlineContainer div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 11px; */
+    gap: 10px;
+    /* border-radius: 0 3px 3px 0; */
+    border-radius: 0 3px 3px 0;
+}
+
+.on{
+    border: 1px solid rgb(55, 197, 178);
+    /* border: 1px solid var(--color-buttons); */
+    background-color: rgb(55, 197, 178);
+    /* background-color: var(--color-buttons); */
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.off{
+    font-size: 15px;
+    border: 1px solid #bebebe;
+    color: rgba(0, 0, 0, 0.562);
+    /* color: rgba(0, 0, 0, 0.566); */
+}
+.off:hover{
+    /* color: rgba(0, 0, 0, 0.828); */
+    /* border: 1px solid #07817b; */
+    border: 1px solid rgb(55, 197, 178);
+    /* border: 1px solid var(--color-buttons); */
+    /* background-color:  rgba(55, 197, 178, 0.086); */
+}
+
+.img{
+    height: 25px;
+    width: 25px;
+}
+
+
+
+
+
+
+/* ISAPRES FILTRO */
+
+#isapres{
+    padding: 0;
+    /* margin: 0 0 0 20px;  */
+    height: 47px;
+    width: 160px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: var(--borderR-buttons);
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#isapres:hover{
+    /* border: 1px solid #07817b; */
+    border: 1px solid rgb(55, 197, 178);
+    /* color: rgba(0, 0, 0, 0.828); */
+}
+
+
+
+
+
+
+/* BUSCAR EXÁMENES CLÍNICAS Y TECNOLOGÍAS */
+
+.searchBarContainer{
+    /* position: absolute;
+    right: 0;
+    margin-right: 70px; */
+    height: 47px;
+    overflow: hidden;
+    display: flex;
+    gap: 5px;
+}
+
+.searchBarContainer input{
+    width: 280px;
+    height: 100%;
+    font-size: 15px;
+    border: 1px solid #bebebe;
+    border-radius: var(--borderR-buttons);
+    color: rgba(0, 0, 0, 0.811);
+    outline: none;
+    padding-left: 14px;
+}
+.searchBarContainer input::placeholder{
+    opacity: .6;
+}
+
+.searchBarContainer button{
+    width: 80px;
+    height: 100%;
+    font-size: 15px;
+    border: none;
+    border-radius: var(--borderR-buttons);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: var(--color-buttons);
+    
+}
+.searchBarContainer button:hover{
+    background-color: var(--color-buttonsHover);
+}
+
+
+
+
+
+/* OTROS FILTROS */
+
+.otrosFiltrosContainerOut{
+    font-size: 15px;
+    border: 1px solid #bebebe;
+    color: rgba(0, 0, 0, 0.562);
+    position: absolute;
+    right: 0;
+    margin-right: 70px;
+    display: flex;
+    background-color: white;
+}
+/* .otrosFiltrosContainerOut:hover{
+    background-color:  rgba(55, 197, 178, 0.086);
+} */
+.otrosFiltrosContainerIn{
+    font-size: 15px;
+    border: 1px solid rgb(55, 197, 178);
+    color: white;
+    position: absolute;
+    right: 0;
+    margin-right: 70px;
+    display: flex;
+    background-color: rgb(55, 197, 178);
+}
+
+.otrosFiltros{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icons{
+    font-size: 18px;
+}
