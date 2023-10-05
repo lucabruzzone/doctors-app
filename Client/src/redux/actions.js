@@ -55,6 +55,10 @@ export const showAllDoctors = () => {
     return {type: "ALLDOCTORS"}
 }
 
+export const showAllInitialDoctors = (allDoctors) => {
+    return {type: "ALLINITIALDOCTORS", payload: allDoctors}
+}
+
 export const asideScroll = (scroll) => {
     return {type: "ASIDESCROLL", position: scroll}
 }

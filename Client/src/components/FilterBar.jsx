@@ -1,5 +1,7 @@
 import styles from './FilterBar.module.css';
 import image from '../img/camera-360.png';
+import arrowup from '../img/arrowup.svg';
+import arrowdown from '../img/arrowdown.svg';
 import { previsiones } from '../../src/data2';
 import { switchModalidad, previsionSelection, previsionFiltro, showAllDoctors, asideTranslate } from '../redux/actions';
 import { useState } from 'react';
@@ -73,7 +75,7 @@ export default function FilterBar() {
                 </div>
                 
                 <div onClick={handleSideBar} name="otrosFiltros" id={styles.isapres} className={asideGlobal === 'bigContainerTranslateIn' ? styles.otrosFiltrosContainerIn: styles.otrosFiltrosContainerOut}>
-                    <p className={styles.otrosFiltros}>Otros filtros {/* {asideGlobal === 'bigContainerTranslateIn' ? <BsChevronUp className={styles.icons}/>: <BsChevronDown className={styles.icons}/>} */}
+                    <p className={styles.otrosFiltros}>Otros filtros {asideGlobal === 'bigContainerTranslateIn' ? <img src={arrowup} className={styles.icons} alt="" />: <img src={arrowdown} className={styles.icons} alt="" />}
                     </p>
                 </div>
             </div>

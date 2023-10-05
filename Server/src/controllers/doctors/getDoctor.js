@@ -1,6 +1,8 @@
+const allDoctors = require('../../utils/data');
 
-function getDoctor(req, res) {
-    res.json({message: 'createDoctor funciona'})
+function getDoctor(name) {
+    const doctor = allDoctors.find(doc => doc.name === name)
+    return doctor;
 }
 
 module.exports = getDoctor;

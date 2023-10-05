@@ -9,8 +9,8 @@ const initialState = {
     inputData: {},
     modalidad: 'presencial',
     prevision: '',
-    renderDoctors: data,
-    allDoctors: data,
+    renderDoctors: [],
+    allDoctors: [],
     scrollY: 'bigContainerAbsolute',
     asideBar: 'bigContainerTranslateOut',
     myFavorites: [],
@@ -77,6 +77,11 @@ const rootReducer = (state = initialState, action) => {
         case 'PREVISIONFILTRO':
             let docsFilter = state.allDoctors.filter(doc => doc.convenio.includes(action.payload))
             state = {...state, renderDoctors: docsFilter};
+            return state;
+            
+        case 'ALLINITIALDOCTORS':
+
+            state = { ...state, allDoctors: action.payload, renderDoctors: action.payload };
             return state;
 
         case 'ALLDOCTORS':

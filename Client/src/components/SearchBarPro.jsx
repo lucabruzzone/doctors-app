@@ -1,4 +1,5 @@
 import styles from './SearchBarPro.module.css';
+import axios from 'axios';
 import { data } from '../data';
 import { fullWeek } from '../Functions/Calendar';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -15,8 +16,13 @@ export default function SearchBarPro() {
         especialidad: [''],
         lugar: ['']
     });
-    function handleSearch(){
+    async function handleSearch(){
         if(dataInput.especialidad[0] !== '' && dataInput.lugar[0] !== '') navigate('/main');
+        /* const URL = 'http://localhost:3001/doctors/';
+        const { data } = await axios(URL);
+        console.log(data); */
+        /* alert('ha ocurrido un error') */
+
     }
     function handleInput(e) {
         const property = e.target.name;
@@ -35,7 +41,7 @@ export default function SearchBarPro() {
             </div>
             <div className={styles.downContainer}>
                 <div className={styles.inputsContainer}>
-                    <input onChange={handleInput} name='especialidad' className={styles.inputDoctor} type="text" placeholder='Especialidad, enfermedad o nombre' />
+                    <input onChange={handleInput} name='especialidad' className={styles.inputDoctor} type="text" placeholder='Especialidad, enfermedad o profesional' />
                     <input onChange={handleInput} name='lugar' className={styles.inputLugar} type="text" placeholder='Lugar' />
                 </div>
                 <div className={styles.inputsSearch}>

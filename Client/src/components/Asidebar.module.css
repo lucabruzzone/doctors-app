@@ -104,12 +104,12 @@
     border: 1px solid white;
     border-radius: 3px;
     color: rgba(0, 0, 0, 0.721);
-    transition: .5s;
+    transition: .4s;
 }
 .bigSectionOut:hover{
     border: 1px solid rgba(55, 197, 178, 0.868);
     color: rgb(0, 0, 0);
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
 .bigSectionIn{
@@ -118,7 +118,7 @@
     height: 460px;
     border: 1px solid rgba(55, 197, 178, 0.868);
     border-radius: 3px;
-    transition: .5s;
+    transition: .4s;
 }
 
 .mainItemsContainer div{

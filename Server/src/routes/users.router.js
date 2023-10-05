@@ -5,8 +5,14 @@ const modifyUser = require('../controllers/users/modifyUser');
 
 const usersRouter = Router();
 
-usersRouter.get('/users/:codigo', getUserData);
-usersRouter.post('/users', createUser);
-usersRouter.put('/users', modifyUser);
+usersRouter.post('/', createUser);
+usersRouter.get('/:codigo', (req, res) => {
+    const  { codigo } = req.params;
+    getUserData(res);
+});
+usersRouter.put('/:id', (req, res) => {
+    const  { id } = req.params;
+    modifyUser(id, res);
+});
 
 module.exports = usersRouter;

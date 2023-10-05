@@ -191,33 +191,41 @@
 
 .listaButtonslih2{
     color: #024d49;
+    text-decoration: none;
 }
 
 .listaButtonslih2Cambio{
     color: #024d49;
+    text-decoration: none;
 }
 
 .inicioSesion{
     font-size: 16px;
     font-weight: 500;
     padding: 5px 6px;
-    color: #035f5b;
+    background-color:  #08968f;
     border: 2px solid #08968f;
+    color: white;
     border-radius: 3px;
+    cursor: pointer;
 }
+.inicioSesion:hover{
+    color: #024d49;
+    background-color: white;
+    border: 2px solid white;
+}
+
 .inicioSesion2{
     font-size: 16px;
     font-weight: 500;
     padding: 5px 6px;
-    color: #000000b1;
-    border: 2px solid #ffffff;
-    border-radius: var(--borderR-buttons);
-}
-.listaButtons li h3:hover{
-    background-color:  #08968f;
-    border: 2px solid #08968f;
     color: white;
+    background-color: #08968f;
+    border: 2px solid #08968f;
+    border-radius: var(--borderR-buttons);
     cursor: pointer;
 }
-
-/* NAVBAR LINKS */
+.inicioSesion2:hover{
+    background-color:  #ffffff;
+    color: #024d49;
+}

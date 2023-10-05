@@ -1,6 +1,8 @@
+const allDoctors = require('../../utils/data');
 
-function createDoctor(req, res) {
-    res.json({message: 'createDoctor funciona'})
+function createDoctor(newDoctor) {
+    allDoctors.push(newDoctor);
+    return allDoctors;
 }
 
 module.exports = createDoctor;

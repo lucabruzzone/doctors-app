@@ -1,12 +1,14 @@
 import './App.css';
 import React from 'react';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
-import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
+import {Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import Main from './components/Main'
+import Main from './components/Main';
+import Form from './components/Form';
 import { useDispatch, useSelector } from 'react-redux';
 import { PATHROUTES } from './PathRoutes';
-import { dateSelection, inputData, addInitialDoctors } from './redux/actions';
+import { dateSelection, inputData, addInitialDoctors, showAllInitialDoctors } from './redux/actions';
 import { fullWeek} from './Functions/Calendar';
 import { data } from './data';
 
@@ -24,8 +26,15 @@ function App() {
    /* useEffect(() => {
       Object.keys(pass).length === 0 && navigate(PATHROUTES.home);
    }, [pass]); */
+
+   async function getAllDoctors() {
+      const URL = 'http://localhost:3001/doctors/';
+      const { data } = await axios(URL);
+      dispatch(showAllInitialDoctors(data));
+   }
    
    useEffect(() => {
+      getAllDoctors();
       !localStorage.dataInput && navigate(PATHROUTES.home);
    }, []);
 
@@ -41,6 +50,7 @@ function App() {
          <Routes>
             <Route path={PATHROUTES.home} element={<Home/>}/>
             <Route path={PATHROUTES.main} element={<Main/>}/>
+            <Route path={PATHROUTES.form} element={<Form/>}/>
          </Routes>
       </div>
    );

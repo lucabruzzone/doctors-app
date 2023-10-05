@@ -1,5 +1,5 @@
 
-export let data = [
+let data = [
    {
       id: 1,
       name: 'Rick Sanchez Castillo Cepeda',
@@ -498,3 +498,5 @@ export let data = [
    },
    
 ];
+
+module.exports = data;

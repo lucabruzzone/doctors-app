@@ -1,4 +1,4 @@
-export const previsiones = [
+const previsiones = [
     'BANMEDICA', 
     'ISALUD', 
     'CRUZ BLANCA', 
@@ -10,7 +10,7 @@ export const previsiones = [
     'MAS VIDA', 
     'VIDA TRES'];
 
-export const enfermedades = [
+const enfermedades = [
     'AMIGDALITIS',
     'ACNÉ',
     'ADICCIONES',
@@ -27,7 +27,7 @@ export const enfermedades = [
     'ASTIGMATISMO'
 ]
 
-export const centros = [
+const centros = [
     'CENTROMED',
     'CLÍNICA CIUDAD DEL MAR',
     'INTEGRAMÉDICA',
@@ -46,7 +46,7 @@ export const centros = [
     'CLÍNICA MEDS',
 ]
 
-export const servicios = [
+const servicios = [
     'CONSULTA MÉDICA',
     'HOSPITALIZACIÓN',
     'AMBULANCIA',
@@ -56,7 +56,7 @@ export const servicios = [
     'PROCEDIMIENTOS',
 ]
 
-export const pagos = [
+const pagos = [
     'EFECTIVO',
     'TRANSFERENCIA BANCARIA',
     'TARJETA DE CRÉDITO',
@@ -64,3 +64,11 @@ export const pagos = [
     'DEPÓSITO BANCARIO',
     'CHEQUE',
 ]
+
+module.exports = {
+    previsiones,
+    enfermedades,
+    centros,
+    servicios,
+    pagos
+};
