@@ -6,7 +6,7 @@ import { inputData } from '../redux/actions';
 import { useState } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 
-export default function Navbar() {
+export function Navbar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     let location = useLocation();
@@ -16,6 +16,8 @@ export default function Navbar() {
         loop: {},
         typeSpeed: 60,
     })
+    const [dataInput, setDataInput] = useState(iData());
+
     function iData() {
         if(localStorage.dataInput) {
             return JSON.parse(localStorage.dataInput)
@@ -27,13 +29,9 @@ export default function Navbar() {
             });
         }
     }
-    const [dataInput, setDataInput] = useState(iData());
-    /* const [dataInput, setDataInput] = useState({
-        especialidad: [''],
-        lugar: ['']
-    }); */
 
     function handleSearch(e) {
+        e.preventDefault();
         dispatch(inputData(dataInput));
         if (typeof Storage !== 'undefined' && dataInput.especialidad[0] !== '' && dataInput.lugar[0] !== '' && (e.key === 'Enter' || e.target.name === 'button')) {
             localStorage.setItem('dataInput', JSON.stringify(dataInput));
@@ -68,8 +66,8 @@ export default function Navbar() {
                 <div className={styles.listaButtons}>
                     <li>
                         <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Reservas</h2>
-                        <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Anular hora</h2>
-                        <NavLink to='/form' className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>
+                        {/* <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Anular hora</h2> */}
+                        <NavLink to='/form' id={pathname === PATHROUTES.form ? styles.formOnn : ''} className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>
                             <h2>¿Eres doctor?</h2>
                         </NavLink>
                         <h3 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.inicioSesion : styles.inicioSesion2}>Iniciar sesión</h3>

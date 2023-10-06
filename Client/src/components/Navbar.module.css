@@ -176,13 +176,17 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* padding-left: 30%; */
 }
 
 .listaButtons li h2{
     font-size: 15px;
     font-weight: 400;
     padding: 5px 10px;
+    margin: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .listaButtons li h2:hover{
     cursor: pointer;
@@ -197,6 +201,11 @@
 .listaButtonslih2Cambio{
     color: #024d49;
     text-decoration: none;
+    background-color: rgb(55, 197, 178);
+}
+
+#formOnn{
+    background-color: white;
 }
 
 .inicioSesion{
@@ -208,6 +217,7 @@
     color: white;
     border-radius: 3px;
     cursor: pointer;
+    margin-left: 5px;
 }
 .inicioSesion:hover{
     color: #024d49;
@@ -224,6 +234,7 @@
     border: 2px solid #08968f;
     border-radius: var(--borderR-buttons);
     cursor: pointer;
+    margin-left: 5px;
 }
 .inicioSesion2:hover{
     background-color:  #ffffff;

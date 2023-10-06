@@ -9,9 +9,9 @@ import image from '../img/healthcare-workers-7408560_1280.png';
 export default function Home() {
    return(
       <div className={styles.bigContainer}>
-         <section className={styles.navSection}>
+         {/* <section className={styles.navSection}>
             <Navbar/>
-         </section>
+         </section> */}
          <section className={styles.midSection}>
             <div className={styles.searchSection}>
                <div className={styles.textoGrande}>

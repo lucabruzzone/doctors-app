@@ -11,6 +11,8 @@ import { PATHROUTES } from './PathRoutes';
 import { dateSelection, inputData, addInitialDoctors, showAllInitialDoctors } from './redux/actions';
 import { fullWeek} from './Functions/Calendar';
 import { data } from './data';
+import Footer from './components/Footer';
+import { Navbar } from './components/Navbar';
 
 
 function App() {
@@ -47,11 +49,13 @@ function App() {
 
    return (
       <div className='App'>
+         {location.pathname !== PATHROUTES.main && <Navbar/>}
          <Routes>
             <Route path={PATHROUTES.home} element={<Home/>}/>
             <Route path={PATHROUTES.main} element={<Main/>}/>
             <Route path={PATHROUTES.form} element={<Form/>}/>
          </Routes>
+         {location.pathname !== PATHROUTES.home && <Footer/>}
       </div>
    );
 }

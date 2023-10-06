@@ -7,13 +7,13 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    background-color: rgb(255, 255, 255);
 }
 
 .container{
-    background-color: rgb(255, 255, 255);
     position: relative;
     width: 100%;
-    max-width: 950px;
+    max-width: 1000px;
     padding: 50px;
 }
 
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 40px;
 }
 
 .section{
@@ -70,14 +70,43 @@
 .nombre{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+#subirImagen{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.labelAddImage{
+    border: 1px dashed #999;
+    border-radius: 6px;
+    padding: 10px 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    opacity: .8;
+}
+
+.labelAddImage:hover{
+    background-color: #08968f1c;
+    opacity: 1;
+}
+
+.labelAddImage::after{
+    content: '📷';
 }
 
 .addImage{
+    display: none;
     background-color: #ededed;
-    padding: 4px 45px;
+    color: rgba(0, 0, 0, 0.533);
+    padding: 4px 20px;
     border-radius: 20px;
+    border: none;
     box-shadow: 1px 1px 3px #7e7e7e7f;
+    font-weight: bold;
     cursor: pointer;
 }
 .addImage:hover{
@@ -86,26 +115,100 @@
     box-shadow: 1px 1px 2px #056b66a9;
 }
 
-#addImage{
-    background-color: #ededed;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.533);
-    padding: 4px 45px;
-    border-radius: 20px;
-    box-shadow: 1px 1px 3px #7e7e7e7f;
-    font-weight: bold;
-    cursor: pointer;
-}
-#addImage:hover{
-    background-color: #08968f;
-    color: white;
-    box-shadow: 1px 1px 2px #056b66a9;
+
+
+
+
+
+/* GÉNERO */
+
+.gender{
+    display: flex;
+    gap: 20px;
 }
 
-#addMiniImage{
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.841);
+.gender button{
+    background-color: #ededed;
+    padding: 4px 45px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
+.gender button:hover{
+    background-color: #08968f;
+    color: white;
+}
+
+#buttonOnn{
+    background-color: #08968f;
+    color: white;
+}
+
+
+
+
+
+
+/* CONVENIO */
+
+#convenio{
+    width: 80%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    gap: 0;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.391);
+    border-radius: 5px;
+}
+
+.label{
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.convenioOff{
+    height: 0;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.convenioOnn{
+    height: 400px;
+    overflow: scroll;
+    transition: .4s;
+    padding-bottom: 80px;
+}
+
+#convenioBox{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#convenioBox div{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#convenioBox div label{
+    font-size: 13px;
+}
+
+#convenioBox input{
+    cursor: pointer;
+}
+
+
+
 
 
 
@@ -151,6 +254,9 @@
     margin-top: 10px;
     border: 1px solid rgba(0, 0, 0, 0.391);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .h1{
@@ -166,17 +272,27 @@
 }
 .calendarOnn{
     overflow: hidden;
-    height: 350px;
+    height: 500px;
     transition: .4s;
 }
 
-.horas{
+
+
+
+
+
+
+/* HORAS */
+
+.horasContainer{
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 0 60px 30px 60px;
 }
 
-.horas button{
+.horasContainer button{
     margin: 5px;
     width: 50px;
     height: 30px;
@@ -187,7 +303,7 @@
     justify-content: center;
     cursor: pointer;
 }
-.horas button:hover{
+.horasContainer button:hover{
     background-color: white;
     border: 1px solid  #025c57;
 }
@@ -198,11 +314,6 @@
 
 .online{
     background-color: rgba(61, 145, 255, 0.188);
-}
-
-#horaOnn{
-    color: white;
-    background-color: #025c57;
 }
 
 .submit{
@@ -219,4 +330,146 @@
 .submit:hover{
     background-color: #058079;
     color: white;
+}
+
+
+
+
+
+
+/* SELECCIÓN HORARIO */
+
+.horarioSeleccionado{
+    /* height: 290px; */
+    overflow: hidden;
+    margin: 0 60px;
+    background-color: #ededed;
+    border-radius: 10px;
+}
+
+.segundoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.426);
+    border-radius: 3px;
+}
+
+.horarioSeleccionado input{
+    height: 25px;
+    width: 200px;
+}
+
+.horarioSeleccionado ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 50px;
+    padding: 0;
+    gap: 10px;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.horarioContainer ul::-webkit-scrollbar {
+    height: 0;
+}
+
+.barra li{
+    border: 1px solid rgba(0, 0, 0, 0.426);
+    border-radius: 3px;
+    height: 25px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .7;
+}
+
+.barra li:hover{
+    opacity: 1;
+}
+
+.after{
+    content: '✖️';
+    font-size: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.addIcon{
+    padding-right: 30px;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.addIcon::after{
+    content: '➕';
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+.addIcon:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+/* HORARIO SELECCIONADO */
+
+.yaSeleccionados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 220px;
+    padding: 10px 0;
+    overflow: scroll;
+}
+
+.barra2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 10px;
+    opacity: .4;
+}
+
+.fechaSaved{
+    width: 150px;
+    height: 20px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra2 li{
+    border: 1px solid rgba(0, 0, 0, 0.426);
+    border-radius: 3px;
+    height: 20px;
+    min-width: 60px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkIcon{
+    border: none;
+    border-radius: 4000px;
+    font-size: 20px;
 }

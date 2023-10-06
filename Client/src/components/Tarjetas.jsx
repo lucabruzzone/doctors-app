@@ -22,7 +22,7 @@ export default function Tarjetas({ characters }) {
     const Modalidad = useSelector(state => state.modalidad)
     const SELformat = `${SEL.day}/${SEL.monthNumber}/${SEL.year}`;
     const charsFiltered = characters.filter(char => {
-        return char[Modalidad].hasOwnProperty(SELformat) && LUGAR.includes(char.lugar) && ESP.includes(char.especialidad);
+        return char[Modalidad].hasOwnProperty(SELformat) && char[Modalidad][SELformat].length > 0 && LUGAR.includes(char.lugar) && ESP.includes(char.especialidad);
     })
     return (
         <div className={styles.bigContainer}>

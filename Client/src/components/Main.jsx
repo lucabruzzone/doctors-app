@@ -1,16 +1,15 @@
 import React,  { useRef, useEffect } from 'react';
 import styles from './Main.module.css';
-import Navbar from './Navbar';
 import FilterBar from './FilterBar';
 import Calendar from './Calendar';
 import Tarjetas from './Tarjetas';
-import Footer from './Footer';
 import { data } from '../data';
 import { fullWeek} from '../Functions/Calendar';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { PATHROUTES } from '../PathRoutes';
 import { Asidebar } from './Asidebar';
+import { Navbar } from './Navbar';
 import { asideScroll } from '../redux/actions';
 
 export default function Main() {
@@ -42,7 +41,7 @@ export default function Main() {
     } */
     return(
         <div ref={divRef} className={styles.bigContainer} id={styles[scrollY]}>
-            <Navbar />
+            <Navbar/>
             <FilterBar />
             <Asidebar />
             <section className={styles.containerSinNavBar} id={asideTranslate === 'bigContainerTranslateIn' ? styles.opacity: ''}>
@@ -51,7 +50,6 @@ export default function Main() {
                     <Tarjetas characters={doctors} />
                 </div>
             </section>
-            <Footer />
         </div>
     )
 }
