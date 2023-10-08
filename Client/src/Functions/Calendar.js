@@ -26,15 +26,21 @@ export const fullWeek = j => {
         return {
             minutes: element.getMinutes(),
             hours: element.getHours(),
-            day: element.getDate(),
+            day: cero(element.getDate()),
             weekDay: intlWeek.format(element),
-            monthNumber: element.getMonth(),
+            monthNumber: cero(element.getMonth() + 1),
             month: intlMonth.format(element).toUpperCase(),
             monthShort: intlMonthShort.format(element),
             year: element.getFullYear()
         }
     });
     return fullWeek;
+}
+
+function cero(element) {
+    const string = element.toString();
+    if (string.length < 2) return `0${element}`;
+    else return string;
 }
 
 

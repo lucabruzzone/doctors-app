@@ -10,7 +10,7 @@ doctorsRouter.post('/', (req, res) => {
         const addToAllDoctors = createDoctor(req.body);
         res.status(200).json(addToAllDoctors);
     } catch (error) {
-        res.status(500).json({ error: 'error al obtener los datos' });
+        res.status(500).json({ error: error.message });
     }
 });
 

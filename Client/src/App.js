@@ -7,12 +7,13 @@ import Home from './components/Home.jsx';
 import Main from './components/Main';
 import Form from './components/Form';
 import { useDispatch, useSelector } from 'react-redux';
-import { PATHROUTES } from './PathRoutes';
+import { PATHROUTES, URL } from './PathRoutes';
 import { dateSelection, inputData, addInitialDoctors, showAllInitialDoctors } from './redux/actions';
 import { fullWeek} from './Functions/Calendar';
 import { data } from './data';
 import Footer from './components/Footer';
 import { Navbar } from './components/Navbar';
+import Reservas from './components/Reservas';
 
 
 function App() {
@@ -30,8 +31,7 @@ function App() {
    }, [pass]); */
 
    async function getAllDoctors() {
-      const URL = 'http://localhost:3001/doctors/';
-      const { data } = await axios(URL);
+      const { data } = await axios(`${URL}/doctors`);
       dispatch(showAllInitialDoctors(data));
    }
    
@@ -54,6 +54,7 @@ function App() {
             <Route path={PATHROUTES.home} element={<Home/>}/>
             <Route path={PATHROUTES.main} element={<Main/>}/>
             <Route path={PATHROUTES.form} element={<Form/>}/>
+            <Route path={PATHROUTES.reservas} element={<Reservas/>}/>
          </Routes>
          {location.pathname !== PATHROUTES.home && <Footer/>}
       </div>

@@ -50,11 +50,11 @@ export function Navbar() {
 
     return (
         <div className={styles.bigContainerMagnum}>
-            <div id={styles.bigContainer} className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.bigContainerColor2: styles.bigContainerColor1}>
-                <div id={styles.miConsulta} className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.nombre2: styles.nombre}>
+            <div id={styles.bigContainer} className={pathname !== PATHROUTES.home ? styles.bigContainerColor2: styles.bigContainerColor1}>
+                <div id={styles.miConsulta} className={pathname !== PATHROUTES.home ? styles.nombre2: styles.nombre}>
                     <h1 onClick={navigateToHome}>MiConsulta</h1>
                 </div>
-                <div id={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.searchBar: styles.oculto}>
+                <div id={pathname !== PATHROUTES.home ? styles.searchBar: styles.oculto}>
                     <div className={styles.inputsContainer}>
                         <input onChange={handleInput} onKeyPress={handleSearch} id={styles.input1} name='especialidad' className={styles.inputDoctor} type="text" placeholder={dataInput.especialidad.length > 1 ? dataInput : text}/>
                         <input onChange={handleInput} onKeyPress={handleSearch} id={styles.input2} name='lugar' className={styles.inputLugar} type="text" placeholder={dataInput.lugar.length > 1 ? dataInput : 'Lugar'}/>
@@ -65,9 +65,11 @@ export function Navbar() {
                 </div>
                 <div className={styles.listaButtons}>
                     <li>
-                        <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Reservas</h2>
-                        {/* <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Anular hora</h2> */}
-                        <NavLink to='/form' id={pathname === PATHROUTES.form ? styles.formOnn : ''} className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>
+                        <NavLink  to='/reservas' id={pathname === PATHROUTES.reservas ? styles.formOnn : ''} className={pathname !== PATHROUTES.home ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>
+                            <h2 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>Reservas</h2>
+                        </NavLink>
+                        
+                        <NavLink to='/form' id={pathname === PATHROUTES.form ? styles.formOnn : ''} className={pathname !== PATHROUTES.home ? styles.listaButtonslih2Cambio : styles.listaButtonslih2}>
                             <h2>¿Eres doctor?</h2>
                         </NavLink>
                         <h3 className={pathname === PATHROUTES.main || pathname === PATHROUTES.form ? styles.inicioSesion : styles.inicioSesion2}>Iniciar sesión</h3>

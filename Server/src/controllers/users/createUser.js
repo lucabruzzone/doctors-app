@@ -1,6 +1,6 @@
+const pacientes = require('../../utils/ejemploReserva');
 
-function createUser(req, res) {
-    res.json({message: 'createUser funciona'})
+function crearCita(body) {
 }
 
-module.exports = createUser;
+module.exports = crearCita;

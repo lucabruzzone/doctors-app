@@ -1,6 +1,9 @@
+const dataPacientes = require('../../utils/ejemploReserva');
 
-function modifyUser(req, res) {
-    res.json({message: 'modifyUser funciona'})
+function modificarCita(body, codigo) {
+    dataPacientes.shift();
+    dataPacientes.push(body);
+    return dataPacientes;
 }
 
-module.exports = modifyUser;
+module.exports = modificarCita;

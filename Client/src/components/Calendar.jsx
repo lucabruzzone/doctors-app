@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Calendar.module.css';
-import image from '../img/atras.png'
-import FilterBar from './FilterBar';
+import image from '../img/atras.png';
 import { cssDayMatcher } from '../Functions/Calendar';
 import { useDispatch, useSelector } from 'react-redux';
 import { nextWeek, prevWeek, dateSelection, refreshCalendar } from '../redux/actions';
@@ -35,7 +34,10 @@ export default function Calendar({characters, fullWeek}) {
         const letraParse = JSON.parse(letra);
         if(matcher(letraParse)) return styles.dateBoxCurrent;
         else {
-            if(cssDayMatcher(letraParse, characters, Modalidad, iData())) return styles.dateBox;
+            if(cssDayMatcher(letraParse, characters, Modalidad, iData())) {
+                console.log(cssDayMatcher(letraParse, characters, Modalidad, iData()));
+                return styles.dateBox;
+            }
             else return styles.dateBoxEmpty;
         }
     }

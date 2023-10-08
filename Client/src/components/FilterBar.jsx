@@ -7,7 +7,6 @@ import { switchModalidad, previsionSelection, previsionFiltro, showAllDoctors, a
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTypewriter } from 'react-simple-typewriter';
-/* import {BsChevronUp, BsChevronDown} from 'react-icons/bs'; */
 
 export default function FilterBar() {
     const dispatch = useDispatch();

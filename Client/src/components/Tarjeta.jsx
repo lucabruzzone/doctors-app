@@ -20,7 +20,7 @@ export default function Tarjeta({character, horas, modalidad}) {
         <div onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOff} className={styles.bigContainer} key={id}>
             <div className={styles.containerUp}>
                 <div>
-                    <div className={gender === 'Dra' ? styles.imgContainer: styles.imgContainerMen}>
+                    <div className={gender === 'female' ? styles.imgContainer: styles.imgContainerMen}>
                         <img className={mouseOverOn ? styles.image2: styles.image1} src={image} alt="" />
                     </div>
                 </div>
@@ -49,7 +49,7 @@ export default function Tarjeta({character, horas, modalidad}) {
             <hr />
             <div className={mouseOverOn ? styles.containerDown: styles.containerDown2}>
                 <div className={styles.DownLeft}>
-                    <p className={styles.name}>{gender}. {name}</p>
+                    <p className={styles.name}>{gender === 'male' ? 'Dr' : 'Dra'}. {name}</p>
                     {/* <p>{puntuacion}</p> */}
                     <p>{especialidad}</p>
                 </div>

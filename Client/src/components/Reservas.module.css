@@ -1,0 +1,256 @@
+
+.bigContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.formBigContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    padding: 40px 0 400px 0;
+}
+
+.codigoLabel{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    margin-bottom: 60px;
+}
+
+.codigoLabel input{
+    height: 50px;
+    width: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.172);
+    border-radius: 3px;
+    font-size: 20px;
+    text-align: center;
+}
+.codigoLabel input:hover{
+    background-color: rgba(200, 200, 200, 0.081);
+}
+
+.nombrePaciente{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.775);
+}
+
+
+
+
+
+
+
+/* RESERVAS SECTION*/
+
+.reservasBigContainer{
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, 0.172);
+    border-radius: 3px;
+}
+
+.reservasTitulo{
+    width: 100%;
+    color: rgba(0, 0, 0, 0.775);
+}
+
+.tablaParams{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.172);
+    background-color: rgba(235, 235, 235, 0.289);
+    color: rgba(0, 0, 0, 0.775);
+}
+
+.param1{
+    width: 150px;
+    flex-grow: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.param2{
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.param3{
+    width: 150px;
+    flex-grow: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desplegable{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+#desplegableOnn{
+    height: 300px;
+}
+
+#desplegableOff{
+    height: 0;
+}
+
+
+
+
+
+
+/* BARRITAS */
+
+.barra2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#color1{
+    background-color: rgba(55, 197, 178, 0.139);
+}
+#color1:hover{
+    background-color: rgb(55, 197, 178);
+}
+
+#color2{
+    background-color: rgba(55, 197, 178, 0.37);
+}
+#color2:hover{
+    background-color: rgb(55, 197, 178);
+}
+
+.fechaSaved{
+    flex-grow: 0;
+    min-width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra2 ul{
+    margin: 0;
+    padding: 20px 0;
+    height: 100%;
+    flex-grow: 1;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.barra2 ul li{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.barra2 ul li p{
+    margin: 0;
+    padding: 0;
+}
+
+.barra2 ul::-webkit-scrollbar {
+    height: 0;
+}
+
+.button{
+    flex-grow: 0;
+    min-width: 150px;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.533);
+}
+
+.button button{
+    background-color: rgba(255, 255, 255, 0.748);
+    border: none;
+    border-radius: 3000px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    opacity: .5;
+    font-weight: bold;
+}
+
+.button button:hover{
+    background-color: rgba(255, 255, 255, 0.748);
+    border: none;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/* RECARGANDO */
+
+#loadingBig{
+    width: 100%;
+    height: 357px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(233, 233, 233, 0.659);
+}
+
+#loading{
+    width: 50px;
+    height: 50px;
+    border: 7px solid transparent;
+    border-top-color: rgb(55, 197, 178);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+
+@keyframes loading{
+    from { transform: rotate(0turn) }
+    to { transform: rotate(1turn) }
+}

@@ -1,11 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { showAllInitialDoctors } from '../redux/actions';
 import { NavLink } from 'react-router-dom';
 import styles from './Form.module.css';
 import { previsiones } from '../data2';
 import closeImage from '../img/bxs-x-circle.svg';
 import { useState } from 'react';
+import { URL } from '../PathRoutes';
+import axios from 'axios';
 
 export default function Form() {
+    const dispatch = useDispatch();
     const [modalidad, setModalidad] = useState('');
     const [horasPresElegidas, setHorasPresElegidas] = useState([]);
     const [horasOnlineElegidas, setHorasOnlineElegidas] = useState([]);
@@ -49,8 +54,9 @@ export default function Form() {
 
     function handleInput(e) {
         const fecha = e.target.value;
-        const fechaFormat = fecha.split('-').join('/');
-        setDay(fechaFormat);
+        const fechaFormat = fecha.split('-');
+        const reverse = `${fechaFormat[2]}/${fechaFormat[1]}/${fechaFormat[0]}`;
+        setDay(reverse);
     }
 
     function handleAddObject(e) {
@@ -77,7 +83,6 @@ export default function Form() {
         if (property === 'male' || property === 'female') {
             e.preventDefault();
             setNewObject({ ...newObject, gender: property });
-            console.log({ ...newObject, gender: property });
         }
         else if (property === 'name' || property === 'especialidad' || property === 'lugar' || property === 'image') {
             e.preventDefault();
@@ -122,7 +127,17 @@ export default function Form() {
             alert('Hay campos incompletos');
         }
         else alert('Todo listo!');
-        console.log(newObject);
+        postNewObject(newObject);
+    }
+
+    async function postNewObject(newObject) {
+        try {
+            const { data } = await axios.post(`${URL}/doctors`,newObject);
+            console.log(data);
+            dispatch(showAllInitialDoctors(data));
+        } catch (error) {
+            alert('error');
+        }
     }
 
     function handleHour(e) {

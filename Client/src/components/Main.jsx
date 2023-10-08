@@ -22,7 +22,7 @@ export default function Main() {
     const j = useSelector(state => state.j);
     const doctors = useSelector(state => state.renderDoctors);
 
-    useEffect(() => {
+    /* useEffect(() => {
         const handleScroll = () => {
             const div = divRef.current;
             const { y } = div.getBoundingClientRect();
@@ -32,24 +32,31 @@ export default function Main() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, []);
+    }, []); */
 
     /* if(Object.keys(pass).length === 0) {
         navigate(PATHROUTES.home);
     }
     else {
     } */
-    return(
-        <div ref={divRef} className={styles.bigContainer} id={styles[scrollY]}>
-            <Navbar/>
-            <FilterBar />
-            <Asidebar />
-            <section className={styles.containerSinNavBar} id={asideTranslate === 'bigContainerTranslateIn' ? styles.opacity: ''}>
-                <Calendar characters={doctors} fullWeek={fullWeek(j)}/>
-                <div className={styles.tarjetasContainer}>
-                    <Tarjetas characters={doctors} />
+    return (
+        <div className={styles.firstContainer}>
+            {doctors.length ?
+                <div ref={divRef} className={styles.bigContainer} id={styles[scrollY]}>
+                    <Navbar />
+                    <FilterBar />
+                    <Asidebar />
+                    <section className={styles.containerSinNavBar} id={asideTranslate === 'bigContainerTranslateIn' ? styles.opacity : ''}>
+                        <Calendar characters={doctors} fullWeek={fullWeek(j)} />
+                        <div className={styles.tarjetasContainer}>
+                            <Tarjetas characters={doctors} />
+                        </div>
+                    </section>
+                </div> :
+                <div id={styles.loadingBig}>
+                    <div id={styles.loading}></div>
                 </div>
-            </section>
+            }
         </div>
     )
 }
