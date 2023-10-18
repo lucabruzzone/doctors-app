@@ -2,7 +2,6 @@ const allDoctors = require('../../utils/data');
 
 function createDoctor(newDoctor) {
     if (Object.keys(newDoctor).length) {
-        console.log(newDoctor);
         const newFormat = formatDate(newDoctor);
         allDoctors.push(newFormat);
         return allDoctors;
@@ -28,7 +27,6 @@ function formatDate(newDoctor) {
     const lugarFormat = newDoctor.lugar.toUpperCase();
     const especialidadFormat = newDoctor.especialidad.toUpperCase();
     const _newDoctor = {...newDoctor, presencial: [newPresencial][0], online: [newOnline][0], lugar: lugarFormat, especialidad: especialidadFormat};
-    console.log(_newDoctor);
     return _newDoctor;
 } 
 

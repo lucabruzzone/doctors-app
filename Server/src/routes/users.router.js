@@ -6,7 +6,6 @@ const borrarReserva = require('../controllers/users/borrarReserva');
 
 const usersRouter = Router();
 
-usersRouter.post('/', crearCita);
 usersRouter.get('/', (req, res) => {
     try {
         const  { codigo } = req.query;
@@ -16,10 +15,7 @@ usersRouter.get('/', (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-usersRouter.put('/:codigo', (req, res) => {
-    const  { id } = req.params;
-    modificarCita(id, res);
-});
+
 usersRouter.delete('/', (req, res) => {
     try {
         const  { codigo, fecha } = req.query;
@@ -28,6 +24,13 @@ usersRouter.delete('/', (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});
+
+usersRouter.post('/', crearCita);
+
+usersRouter.put('/:codigo', (req, res) => {
+    const  { id } = req.params;
+    modificarCita(id, res);
 });
 
 module.exports = usersRouter;

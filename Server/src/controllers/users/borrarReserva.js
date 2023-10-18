@@ -1,12 +1,12 @@
-const dataPacientes = require('../../utils/ejemploReserva');
-const modificarCita = require('../users/modifyUser');
+let dataPacientes = require('../../utils/ejemploReserva');
 
 function borrarReserva(codigo, fecha) {
-    const sinArray = dataPacientes[0];
-    const reservas = sinArray[codigo].reservas;
-    const citaAnulada = reservas.filter(res => res.fecha !== fecha);
-    const pacienteActualizado = {...sinArray[codigo], reservas: citaAnulada}
-    modificarCita(pacienteActualizado, codigo);
+    let sinArray = dataPacientes.shift();
+    let reservas = sinArray[codigo].reservas;
+    let citaAnulada = reservas.filter(res => res.fecha !== fecha);
+    let pacienteActualizado = {...sinArray[codigo], reservas: citaAnulada};
+    sinArray = {...sinArray, [codigo]: pacienteActualizado};
+    dataPacientes.push(sinArray);
     return pacienteActualizado;
 }
 

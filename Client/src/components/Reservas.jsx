@@ -23,6 +23,7 @@ function Reservas() {
         try {
             const { data } = await axios(`${URL}/users?codigo=${codigo}`);
             if (data) {
+                console.log(data.reservas);
                 setReservasPaciente(data.reservas);
                 setPaciente(data);
                 setNoEncontrado('');
@@ -40,6 +41,7 @@ function Reservas() {
         try {
             const { data } = await axios.delete(`${URL}/users?codigo=${codigo}&fecha=${fecha}`);
             if (data) {
+                console.log(data.reservas);
                 setReservasPaciente(data.reservas);
                 setPaciente(data);
                 setNoEncontrado('');

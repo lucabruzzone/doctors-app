@@ -84,9 +84,13 @@ export default function Form() {
             e.preventDefault();
             setNewObject({ ...newObject, gender: property });
         }
-        else if (property === 'name' || property === 'especialidad' || property === 'lugar' || property === 'image') {
+        else if (property === 'name' || property === 'especialidad' || property === 'lugar') {
             e.preventDefault();
             setNewObject({ ...newObject, [property]: value });
+        }
+        else if (property === 'image') {
+            e.preventDefault();
+            setNewObject({ ...newObject, [property]: 'https://hips.hearstapps.com/hmg-prod/images/rick-and-morty-1604562846.jpg?crop=0.530xw:1.00xh;0.202xw,0&resize=1200:*' });
         }
         else if (property === 'ubicacion') {
             e.preventDefault();
